@@ -4,9 +4,9 @@ declare(strict_types = 1);
 
 namespace App\Model\Aggregate\User;
 
-use App\Infrastructure\ValueObject\ValueObject;
+use App\Infrastructure\ValueObject\AbstractValueObject;
 
-class UserState implements ValueObject 
+class UserState extends AbstractValueObject 
 {
     public $userId;
     public $gender;
@@ -18,23 +18,12 @@ class UserState implements ValueObject
     public $blocked;
     public $address;
 
-    public static function fromArray(array $data): ValueObject 
+    public static function fromArray(array $data): AbstractValueObject 
     {
-        $instance = new self();
-        $instance->userId = $data['userId'];
-        $instance->gender = $data['gender'];
-        $instance->firstName = $data['firstName'];
-        $instance->lastName = $data['lastName'];
-        $instance->username = $data['username'];
-        $instance->password = $data['password'];
+        $instance = parent::fromArray($data);
         $instance->activated = false;
         $instance->blocked = false;
-        $instance->address = $data['address'] ?? null;
+        $instance->address = $instance->address ?? null;
         return $instance;
-    }
-
-    public function toArray(): array 
-    {
-        return (array)$this;
     }
 }
