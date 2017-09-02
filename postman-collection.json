@@ -1,0 +1,86 @@
+{
+	"variables": [],
+	"info": {
+		"name": "EventMachine Example",
+		"_postman_id": "0bdb688d-3d30-98bc-ea9d-523ce65f327f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RegisterUser (min data)",
+			"request": {
+				"url": "http://localhost:8080/api/messagebox/RegisterUser",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"payload\": {\n\t\t\"userId\": \"9492050f-7559-4811-a0f2-25124e50df31\",\n\t\t\"gender\": \"male\",\n\t\t\"firstName\": \"Martin\",\n\t\t\"lastName\": \"Schilling\",\n\t\t\"username\": \"martin-schilling\",\n\t\t\"password\": \"testtest\"\n\t}\n}"
+				},
+				"description": "Register a new user"
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterUser (with address)",
+			"request": {
+				"url": "http://localhost:8080/api/messagebox/RegisterUser",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"payload\": {\n\t\t\"userId\": \"06bce272-2810-4b5d-9a66-a8296238aedd\",\n\t\t\"gender\": \"male\",\n\t\t\"firstName\": \"Martin\",\n\t\t\"lastName\": \"Schilling\",\n\t\t\"username\": \"martin-schilling\",\n\t\t\"password\": \"testtest\",\n\t\t\"address\": {\n\t\t\t\"street\": \"teststreet\",\n\t\t\t\"zipcode\": \"12345\",\n\t\t\t\"city\": \"testcity\",\n\t\t\t\"country\": \"DE\"\n\t\t}\n\t}\n}"
+				},
+				"description": "Change name of a user"
+			},
+			"response": []
+		},
+		{
+			"name": "ActivateUser",
+			"request": {
+				"url": "http://localhost:8080/api/messagebox/ActivateUser",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"payload\": {\n\t\t\"userId\": \"06bce272-2810-4b5d-9a66-a8296238aedd\"\n\t}\n}"
+				},
+				"description": "Register a new user"
+			},
+			"response": []
+		}
+	]
+}
